@@ -2360,3 +2360,6 @@ v0.91.2.4:
  	  - new installs will have have these already as they are considered plants for farm plots by default.
 v0.91.3.0:
 	- Bump for release version number. First 1.9 release version.
+v0.91.3.1:
+    - Handle CHORUS_FRUIT teleports and ties them to whether a player has permission to ITEM_USE on the plot they would teleport to.
+      - Requires CHORUS_FRUIT to be in the item_use_ids list in the config.

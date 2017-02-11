@@ -600,7 +600,18 @@ public class TownyPlayerListener implements Listener {
 		} catch (NotRegisteredException e) {
 			// Not a valid resident, probably an NPC from Citizens.
 		}
+		
+		/*
+		 * Test to see if CHORUS_FRUIT is in the item_use list.
+		 */
+		if (event.getCause() == TeleportCause.CHORUS_FRUIT)
+			if (TownySettings.isItemUseMaterial(Material.CHORUS_FRUIT.name()))
+				if (onPlayerInteract(event.getPlayer(), event.getTo().getBlock(), new ItemStack(Material.CHORUS_FRUIT))) {
+					event.setCancelled(true);					
+					return;
+				}	
 			
+		
 		/*
 		 * Test to see if Ender pearls are disabled.
 		 */		
